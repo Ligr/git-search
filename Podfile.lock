@@ -1,0 +1,15 @@
+PODS:
+  - OAuthSwift (1.2.0)
+  - RxSwift (4.1.2)
+
+DEPENDENCIES:
+  - OAuthSwift (~> 1.0)
+  - RxSwift (~> 4.0)
+
+SPEC CHECKSUMS:
+  OAuthSwift: 7fd6855b8e4d58eb5a30d156ea9bed7a8aecd1ca
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+
+PODFILE CHECKSUM: 9bda3c3f00e48eb98de72124e84aed843e96f902
+
+COCOAPODS: 1.4.0
