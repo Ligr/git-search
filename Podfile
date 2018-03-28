@@ -6,7 +6,7 @@ target 'git-search' do
   use_frameworks!
 
   # Pods for git-search
-  pod 'RxSwift', '~> 4.0'
+  pod 'ReactiveSwift', '~> 3.0'
   pod 'OAuthSwift', '~> 1.0'
 
 end

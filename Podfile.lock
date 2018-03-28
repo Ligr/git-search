@@ -1,15 +1,18 @@
 PODS:
   - OAuthSwift (1.2.0)
-  - RxSwift (4.1.2)
+  - ReactiveSwift (3.1.0):
+    - Result (~> 3.2)
+  - Result (3.2.4)
 
 DEPENDENCIES:
   - OAuthSwift (~> 1.0)
-  - RxSwift (~> 4.0)
+  - ReactiveSwift (~> 3.0)
 
 SPEC CHECKSUMS:
   OAuthSwift: 7fd6855b8e4d58eb5a30d156ea9bed7a8aecd1ca
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  ReactiveSwift: 5b26d2e988fe0eed2daf48c4054d1de74db50184
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
 
-PODFILE CHECKSUM: 9bda3c3f00e48eb98de72124e84aed843e96f902
+PODFILE CHECKSUM: a1ba53b84aca650783a917c81720142703f960a4
 
 COCOAPODS: 1.4.0
