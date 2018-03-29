@@ -38,7 +38,7 @@ final class RepositoriesView: BaseView<RepositoriesViewModelType>, UITableViewDa
         let resultsProducer = searchTextField.reactive.continuousTextValues
         .skipRepeats(==)
         .debounce(1, on: QueueScheduler.main)
-        .flatMap(.latest) { [unowned self] (query) -> SignalProducer<[GroupedRepositoriesViewModelType], ServiceError> in
+        .flatMap(.latest) { [unowned self] (query) -> SignalProducer<[GroupedRepositoriesViewModelType], NoError> in
             guard let query = query, query.count > 0 else {
                 return SignalProducer(value: [])
             }
@@ -49,9 +49,9 @@ final class RepositoriesView: BaseView<RepositoriesViewModelType>, UITableViewDa
                 self.activityIndicator.startAnimating()
             }, terminated: { [unowned self] in
                 self.activityIndicator.stopAnimating()
-            })
-        }.flatMapError { _ -> SignalProducer<[GroupedRepositoriesViewModelType], NoError> in
-            return .empty
+            }).flatMapError { _ -> SignalProducer<[GroupedRepositoriesViewModelType], NoError> in
+                return .empty
+            }
         }
         compositeDisposable += groupedRepositories <~ resultsProducer
 
