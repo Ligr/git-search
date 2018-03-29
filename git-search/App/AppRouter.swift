@@ -23,7 +23,7 @@ final class AppRouter: AppRouterType {
     func start(with session: SessionType) -> ViewType {
         let viewModel = RepositoriesViewModel(session: session)
         let view = RepositoriesView(viewModel: viewModel)
-        window.rootViewController = view
+        window.rootViewController = UINavigationController(rootViewController: view)
         window.makeKeyAndVisible()
         return view
     }

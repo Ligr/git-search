@@ -26,11 +26,12 @@ final class SignalProducerCachedFactory<Filter: DataFilterProtocol, Output, E: E
             if let producer = cache[producerIdentifier] {
                 result = producer
             } else {
-                let producer = factory(filter).on( terminated: { [weak self] in
-                    _ = self?.queue.sync {
-                        self?.cache.removeValue(forKey: producerIdentifier)
-                    }
-                }).replayLazily(upTo: 1)
+                let producer = factory(filter).on(
+                    terminated: { [weak self] in
+                        _ = self?.queue.sync {
+                            self?.cache.removeValue(forKey: producerIdentifier)
+                        }
+                    }).replayLazily(upTo: 1)
                 cache[producerIdentifier] = producer
                 result = producer
             }

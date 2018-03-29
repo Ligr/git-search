@@ -16,15 +16,21 @@ final class GithubService {
         static let apiPath = "graphql"
         static let pageSize = 100
         static let pageCursorFormat = ", after:\\\"%@\\\""
-        static let searchRequestFormat = "{\"query\": \"query { repositoryOwner(login: \\\"%@\\\") { id repositories(first: %d%@) { pageInfo { endCursor hasNextPage hasPreviousPage startCursor } totalCount nodes { id name languages(first: 100) { nodes { id name } } stargazers { totalCount } } } } }\"}"
+        static let searchRequestFormat = "{\"query\": \"query { repositoryOwner(login: \\\"%@\\\") { id repositories(first: %d, orderBy: {direction: DESC, field: STARGAZERS}%@) { pageInfo { endCursor hasNextPage } totalCount nodes { id name languages(first: 100) { nodes { id name } } stargazers { totalCount } } } } }\"}"
     }
 
-    private let webService: HttpJsonService<HttpDataFilter>
+    private final class GithubFilter: HttpDataFilter, DecodableDataFilterProtocol {
+
+        typealias DecodableType = RepositoryResponse
+
+    }
+
+    private let webService: HttpDecodableService<GithubFilter>
     private let authService: AuthTokenServiceProtocol
 
     init(baseUrl: URL, authService: AuthTokenServiceProtocol) {
         self.authService = authService
-        webService = HttpJsonService(baseUrl: baseUrl)
+        webService = HttpDecodableService(baseUrl: baseUrl)
     }
 
 }
@@ -32,19 +38,7 @@ final class GithubService {
 extension GithubService: GithubServiceProtocol {
 
     func searchRepository(by owner: String) -> SignalProducer<[RepositoryType], ServiceError> {
-        return authService.authToken().flatMap(.latest) { [weak self] token -> SignalProducer<[RepositoryType], ServiceError> in
-            guard let strongSelf = self else {
-                    return .empty
-            }
-            let requestData = strongSelf.searchRequest(owner: owner, pageSize: Consts.pageSize).data(using: .utf8)
-            let headerParams = [HTTP.HeaderKey.authorization: "Bearer \(token)"]
-            let filter = HttpDataFilter(path: Consts.apiPath, method: .post, headerParams: headerParams, body: requestData)
-            return strongSelf.webService.request(filter: filter).map { rawRepos -> [RepositoryType] in
-                print(rawRepos)
-//                JSONDecoder().decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: <#T##Data#>)
-                return []
-            }
-        }
+        return searchAllRepositories(by: owner, pageCursor: nil)
     }
 
 }
@@ -52,6 +46,34 @@ extension GithubService: GithubServiceProtocol {
 // MARK: - Private
 
 private extension GithubService {
+
+    func searchAllRepositories(by owner: String, pageCursor: String?) -> SignalProducer<[RepositoryType], ServiceError> {
+        return repositories(by: owner, pageCursor: pageCursor).flatMap(.latest) { [weak self] repositories -> SignalProducer<[RepositoryType], ServiceError> in
+            guard let strongSelf = self else {
+                return .empty
+            }
+            if repositories.pageInfo.hasNextPage {
+                return strongSelf.searchAllRepositories(by: owner, pageCursor: repositories.pageInfo.endCursor).reduce(repositories.repositories, { (prevRepositories, newRepositories) -> [RepositoryType] in
+                    return prevRepositories + newRepositories
+                })
+            }
+            return SignalProducer(value: repositories.repositories)
+        }
+    }
+
+    func repositories(by owner: String, pageCursor: String?) -> SignalProducer<RepositoryResponseType, ServiceError> {
+        return authService.authToken().observe(on: QueueScheduler()).flatMap(.latest) { [weak self] token -> SignalProducer<RepositoryResponseType, ServiceError> in
+            guard let strongSelf = self else {
+                return .empty
+            }
+            let requestData = strongSelf.searchRequest(owner: owner, pageSize: Consts.pageSize, pageCursor: pageCursor).data(using: .utf8)
+            let headerParams = [HTTP.HeaderKey.authorization: "Bearer \(token)"]
+            let filter = GithubFilter(path: Consts.apiPath, method: .post, headerParams: headerParams, body: requestData)
+            return strongSelf.webService.request(filter: filter).map { response -> RepositoryResponseType in
+                return response.data
+            }
+        }
+    }
 
     func searchRequest(owner: String, pageSize: Int, pageCursor: String? = nil) -> String {
         let cursor: String

@@ -13,5 +13,7 @@ protocol RepositoryLanguageType {
 }
 
 struct RepositoryLanguage: RepositoryLanguageType {
+
     let name: String
+
 }

@@ -33,8 +33,18 @@
 		FA3DED56206C33E800D85AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DED55206C33E800D85AD7 /* AppDelegate.swift */; };
 		FA3DED58206C33F900D85AD7 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DED57206C33F900D85AD7 /* AppRouter.swift */; };
 		FA3DED5B206C3F0F00D85AD7 /* AuthTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DED5A206C3F0F00D85AD7 /* AuthTokenService.swift */; };
+		FA3F9402206D61310029AAFD /* RepositoryLanguage+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F9401206D61310029AAFD /* RepositoryLanguage+Decodable.swift */; };
+		FA3F9404206D624F0029AAFD /* Repository+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F9403206D624F0029AAFD /* Repository+Decodable.swift */; };
+		FA3F9406206D63F40029AAFD /* RepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F9405206D63F40029AAFD /* RepositoryResponse.swift */; };
+		FA3F9408206D64400029AAFD /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F9407206D64400029AAFD /* PageInfo.swift */; };
+		FA3F940A206D649F0029AAFD /* PageInfo+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F9409206D649F0029AAFD /* PageInfo+Decodable.swift */; };
+		FA3F940C206D653D0029AAFD /* RepositoryResponse+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F940B206D653D0029AAFD /* RepositoryResponse+Decodable.swift */; };
+		FA3F940E206D6F800029AAFD /* HttpDecodableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F940D206D6F800029AAFD /* HttpDecodableService.swift */; };
+		FA4ABA05206D8F8F009DB157 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4ABA03206D8F8F009DB157 /* RepositoryCellView.swift */; };
+		FA4ABA06206D8F8F009DB157 /* RepositoryCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4ABA04206D8F8F009DB157 /* RepositoryCellView.xib */; };
+		FA4ABA08206D9E8A009DB157 /* RepositoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4ABA07206D9E8A009DB157 /* RepositoryHeaderView.swift */; };
+		FA4ABA0A206D9E98009DB157 /* RepositoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4ABA09206D9E98009DB157 /* RepositoryHeaderView.xib */; };
 		FAC44CC520696A2B00C3555F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC44CC420696A2B00C3555F /* ViewController.swift */; };
-		FAC44CC820696A2B00C3555F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC44CC620696A2B00C3555F /* Main.storyboard */; };
 		FAC44CCA20696A2B00C3555F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC44CC920696A2B00C3555F /* Assets.xcassets */; };
 		FAC44CCD20696A2B00C3555F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC44CCB20696A2B00C3555F /* LaunchScreen.storyboard */; };
 		FAC44CE8206990BB00C3555F /* OAuth2Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC44CE7206990BB00C3555F /* OAuth2Service.swift */; };
@@ -71,9 +81,19 @@
 		FA3DED55206C33E800D85AD7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA3DED57206C33F900D85AD7 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		FA3DED5A206C3F0F00D85AD7 /* AuthTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenService.swift; sourceTree = "<group>"; };
+		FA3F9401206D61310029AAFD /* RepositoryLanguage+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoryLanguage+Decodable.swift"; sourceTree = "<group>"; };
+		FA3F9403206D624F0029AAFD /* Repository+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+Decodable.swift"; sourceTree = "<group>"; };
+		FA3F9405206D63F40029AAFD /* RepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResponse.swift; sourceTree = "<group>"; };
+		FA3F9407206D64400029AAFD /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
+		FA3F9409206D649F0029AAFD /* PageInfo+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageInfo+Decodable.swift"; sourceTree = "<group>"; };
+		FA3F940B206D653D0029AAFD /* RepositoryResponse+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoryResponse+Decodable.swift"; sourceTree = "<group>"; };
+		FA3F940D206D6F800029AAFD /* HttpDecodableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpDecodableService.swift; sourceTree = "<group>"; };
+		FA4ABA03206D8F8F009DB157 /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
+		FA4ABA04206D8F8F009DB157 /* RepositoryCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCellView.xib; sourceTree = "<group>"; };
+		FA4ABA07206D9E8A009DB157 /* RepositoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryHeaderView.swift; sourceTree = "<group>"; };
+		FA4ABA09206D9E98009DB157 /* RepositoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryHeaderView.xib; sourceTree = "<group>"; };
 		FAC44CBF20696A2B00C3555F /* git-search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "git-search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC44CC420696A2B00C3555F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FAC44CC720696A2B00C3555F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAC44CC920696A2B00C3555F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAC44CCC20696A2B00C3555F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAC44CCE20696A2B00C3555F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,8 +143,14 @@
 		FA3DED21206C19D400D85AD7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA3F9407206D64400029AAFD /* PageInfo.swift */,
+				FA3F9409206D649F0029AAFD /* PageInfo+Decodable.swift */,
 				FA3DED22206C19FC00D85AD7 /* Repository.swift */,
+				FA3F9403206D624F0029AAFD /* Repository+Decodable.swift */,
 				FA3DED24206C1A3600D85AD7 /* RepositoryLanguage.swift */,
+				FA3F9401206D61310029AAFD /* RepositoryLanguage+Decodable.swift */,
+				FA3F9405206D63F40029AAFD /* RepositoryResponse.swift */,
+				FA3F940B206D653D0029AAFD /* RepositoryResponse+Decodable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,10 +209,14 @@
 		FA3DED3E206C2D5500D85AD7 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				FA3DED45206C2DAE00D85AD7 /* RepositoriesRouter.swift */,
 				FA3DED3F206C2D7700D85AD7 /* RepositoriesView.swift */,
 				FA3DED40206C2D7700D85AD7 /* RepositoriesView.xib */,
 				FA3DED43206C2D8A00D85AD7 /* RepositoriesViewModel.swift */,
-				FA3DED45206C2DAE00D85AD7 /* RepositoriesRouter.swift */,
+				FA4ABA03206D8F8F009DB157 /* RepositoryCellView.swift */,
+				FA4ABA04206D8F8F009DB157 /* RepositoryCellView.xib */,
+				FA4ABA07206D9E8A009DB157 /* RepositoryHeaderView.swift */,
+				FA4ABA09206D9E98009DB157 /* RepositoryHeaderView.xib */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -195,11 +225,12 @@
 			isa = PBXGroup;
 			children = (
 				FA3DED48206C33A500D85AD7 /* DataFilter.swift */,
-				FA3DED49206C33A500D85AD7 /* Service.swift */,
-				FA3DED4A206C33A500D85AD7 /* SignalProducerCachedFactory.swift */,
 				FA3DED4B206C33A500D85AD7 /* DataResult.swift */,
+				FA3F940D206D6F800029AAFD /* HttpDecodableService.swift */,
 				FA3DED4C206C33A500D85AD7 /* HttpJsonService.swift */,
 				FA3DED4D206C33A500D85AD7 /* HttpService.swift */,
+				FA3DED49206C33A500D85AD7 /* Service.swift */,
+				FA3DED4A206C33A500D85AD7 /* SignalProducerCachedFactory.swift */,
 			);
 			path = DataKit;
 			sourceTree = "<group>";
@@ -248,7 +279,6 @@
 				FAC44CF02069A64A00C3555F /* Extensions */,
 				FAC44CCE20696A2B00C3555F /* Info.plist */,
 				FAC44CCB20696A2B00C3555F /* LaunchScreen.storyboard */,
-				FAC44CC620696A2B00C3555F /* Main.storyboard */,
 				FA3DED21206C19D400D85AD7 /* Models */,
 				FA3DED36206C2C4800D85AD7 /* Routables */,
 				FAC44CE32069907700C3555F /* Services */,
@@ -362,7 +392,8 @@
 				FA3DED42206C2D7700D85AD7 /* RepositoriesView.xib in Resources */,
 				FAC44CCD20696A2B00C3555F /* LaunchScreen.storyboard in Resources */,
 				FAC44CCA20696A2B00C3555F /* Assets.xcassets in Resources */,
-				FAC44CC820696A2B00C3555F /* Main.storyboard in Resources */,
+				FA4ABA0A206D9E98009DB157 /* RepositoryHeaderView.xib in Resources */,
+				FA4ABA06206D8F8F009DB157 /* RepositoryCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,12 +408,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-git-search/Pods-git-search-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
@@ -437,10 +470,14 @@
 				FAC44CC520696A2B00C3555F /* ViewController.swift in Sources */,
 				FA3DED33206C22B200D85AD7 /* View.swift in Sources */,
 				FA3DED58206C33F900D85AD7 /* AppRouter.swift in Sources */,
+				FA4ABA05206D8F8F009DB157 /* RepositoryCellView.swift in Sources */,
 				FA3DED2E206C221800D85AD7 /* SessionRouter.swift in Sources */,
 				FA3DED50206C33A500D85AD7 /* SignalProducerCachedFactory.swift in Sources */,
+				FA3F940E206D6F800029AAFD /* HttpDecodableService.swift in Sources */,
+				FA3F9402206D61310029AAFD /* RepositoryLanguage+Decodable.swift in Sources */,
 				FA3DED52206C33A500D85AD7 /* HttpJsonService.swift in Sources */,
 				FA3DED56206C33E800D85AD7 /* AppDelegate.swift in Sources */,
+				FA3F940A206D649F0029AAFD /* PageInfo+Decodable.swift in Sources */,
 				FAC44CF22069A65500C3555F /* OAuth2Swift+Github.swift in Sources */,
 				FA3DED3C206C2D2A00D85AD7 /* WebBrowser.swift in Sources */,
 				FA3DED25206C1A3600D85AD7 /* RepositoryLanguage.swift in Sources */,
@@ -448,13 +485,18 @@
 				FA3DED2C206C220D00D85AD7 /* Session.swift in Sources */,
 				FA3DED51206C33A500D85AD7 /* DataResult.swift in Sources */,
 				FAC44CE8206990BB00C3555F /* OAuth2Service.swift in Sources */,
+				FA3F9408206D64400029AAFD /* PageInfo.swift in Sources */,
 				FA3DED5B206C3F0F00D85AD7 /* AuthTokenService.swift in Sources */,
 				FA3DED46206C2DAE00D85AD7 /* RepositoriesRouter.swift in Sources */,
+				FA3F940C206D653D0029AAFD /* RepositoryResponse+Decodable.swift in Sources */,
+				FA3F9406206D63F40029AAFD /* RepositoryResponse.swift in Sources */,
 				FA3DED35206C22CC00D85AD7 /* ViewModel.swift in Sources */,
+				FA3F9404206D624F0029AAFD /* Repository+Decodable.swift in Sources */,
 				FA3DED20206C193300D85AD7 /* GithubService.swift in Sources */,
 				FA3DED4E206C33A500D85AD7 /* DataFilter.swift in Sources */,
 				FA3DED1E206C190B00D85AD7 /* GithubServiceProtocol.swift in Sources */,
 				FAC44CEF2069A5F200C3555F /* Constants.swift in Sources */,
+				FA4ABA08206D9E8A009DB157 /* RepositoryHeaderView.swift in Sources */,
 				FA3DED27206C1C2700D85AD7 /* Container.swift in Sources */,
 				FA3DED4F206C33A500D85AD7 /* Service.swift in Sources */,
 				FA3DED44206C2D8A00D85AD7 /* RepositoriesViewModel.swift in Sources */,
@@ -465,14 +507,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FAC44CC620696A2B00C3555F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FAC44CC720696A2B00C3555F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FAC44CCB20696A2B00C3555F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

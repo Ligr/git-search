@@ -48,7 +48,9 @@ final class WebBrowser: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        loadUrl(url)
+        DispatchQueue.main.async {
+            self.loadUrl(self.url)
+        }
     }
     
     func addTrigger(path: String, callback: @escaping (URL) -> ()) {

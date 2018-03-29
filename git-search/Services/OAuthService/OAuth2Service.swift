@@ -77,7 +77,8 @@ extension OAuth2Service: ServiceProtocol {
                     OAuthSwift.handle(url: url)
                     handler?.dismiss(animated: true, completion: nil)
                 }
-                handler.addDoneAction {
+                handler.addDoneAction { [weak handler] in
+                    handler?.dismiss(animated: true, completion: nil)
                     observer.send(error: .cancelled)
                 }
                 strongSelf.oauth2Config.authorizeURLHandler = handler
@@ -89,7 +90,9 @@ extension OAuth2Service: ServiceProtocol {
                 }, failure: { error in
                     observer.send(error: .authorizationFailed(error))
                 })
-                strongSelf.presenter(nc)
+                DispatchQueue.main.async {
+                    self?.presenter(nc)
+                }
             })
         }
     }

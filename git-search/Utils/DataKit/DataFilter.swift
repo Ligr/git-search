@@ -29,7 +29,7 @@ protocol HttpDataFilterProtocol: DataFilterProtocol {
 
 }
 
-struct HttpDataFilter: HttpDataFilterProtocol {
+class HttpDataFilter: HttpDataFilterProtocol {
 
     let method: HttpMethod
     let path: String

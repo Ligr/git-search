@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RepositoriesView" customModule="git_search" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="nIn-et-OiU" id="fGg-H1-q78"/>
+                <outlet property="searchTextField" destination="baJ-Wd-okw" id="fRp-HU-JaF"/>
+                <outlet property="tableView" destination="CHn-mn-ZT5" id="Xpw-Mn-lC9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,8 +22,51 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.11424916240000001" green="0.63155239819999998" blue="0.94901818039999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0t-L2-dkw">
+                    <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search something" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="baJ-Wd-okw">
+                            <rect key="frame" x="8" y="15" width="359" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                        </textField>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nIn-et-OiU">
+                            <rect key="frame" x="341" y="20" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="2am-iM-0g3"/>
+                        <constraint firstAttribute="trailing" secondItem="baJ-Wd-okw" secondAttribute="trailing" constant="8" id="9ee-7S-h7e"/>
+                        <constraint firstItem="nIn-et-OiU" firstAttribute="trailing" secondItem="baJ-Wd-okw" secondAttribute="trailing" constant="-6" id="CfK-uu-EHN"/>
+                        <constraint firstItem="baJ-Wd-okw" firstAttribute="leading" secondItem="a0t-L2-dkw" secondAttribute="leading" constant="8" id="ELV-0l-LC9"/>
+                        <constraint firstItem="baJ-Wd-okw" firstAttribute="centerY" secondItem="a0t-L2-dkw" secondAttribute="centerY" id="fa5-zS-fhd"/>
+                        <constraint firstItem="nIn-et-OiU" firstAttribute="centerY" secondItem="baJ-Wd-okw" secondAttribute="centerY" id="mIP-Ef-cl3"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="default" rowHeight="66" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CHn-mn-ZT5">
+                    <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="mIp-ya-WYL"/>
+                        <outlet property="delegate" destination="-1" id="Z3d-Zy-Nyx"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="CHn-mn-ZT5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3ON-qu-y8s"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="a0t-L2-dkw" secondAttribute="trailing" id="An7-hM-pxw"/>
+                <constraint firstItem="CHn-mn-ZT5" firstAttribute="top" secondItem="a0t-L2-dkw" secondAttribute="bottom" id="aMd-7c-RPF"/>
+                <constraint firstItem="a0t-L2-dkw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e5J-2g-2V3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CHn-mn-ZT5" secondAttribute="bottom" id="j78-bv-DSD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="a0t-L2-dkw" secondAttribute="top" id="l0u-cc-bU4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CHn-mn-ZT5" secondAttribute="trailing" id="zgO-Es-c0y"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>
     </objects>
 </document>
