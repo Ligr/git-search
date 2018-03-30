@@ -10,6 +10,7 @@ import Foundation
 
 protocol RouterType: class {
     var view: ViewType? { get }
+    var session: SessionType { get }
 }
 
 class BaseRouter: RouterType {

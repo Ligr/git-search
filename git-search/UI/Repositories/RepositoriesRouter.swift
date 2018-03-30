@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol RepositoriesRouterType: RouterType {
+protocol RepositoriesRouterType: RouterType, RepositoryDetailsRoutable {
 
 }
 

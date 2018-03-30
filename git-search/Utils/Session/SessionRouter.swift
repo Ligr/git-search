@@ -14,6 +14,9 @@ protocol SessionRouterType: ModalRoutable {
 
 final class SessionRouter: RouterType, SessionRouterType {
 
+    var session: SessionType {
+        fatalError("hey, this is Session Router!")
+    }
     private(set) weak var view: ViewType?
     init(view: ViewType) {
         self.view = view
